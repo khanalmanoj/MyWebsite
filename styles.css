@@ -1,6 +1,15 @@
 /* Modern Portfolio Website Styles */
 :root {
-    /* Light theme colors */
+    /* Light theme colors - directly defined for better compatibility */
+    --primary: #3b82f6;
+    --secondary: #4f46e5;
+    --text: #1f2937;
+    --background: #f3f4f6;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --muted: #6b7280;
+    
+    /* Light theme fallbacks */
     --primary-light: #3b82f6;
     --secondary-light: #4f46e5;
     --text-light: #1f2937;
@@ -17,15 +26,6 @@
     --card-dark: #1f2937;
     --accent-dark: #60a5fa;
     --muted-dark: #9ca3af;
-  
-    /* Current theme */
-    --primary: var(--primary-light);
-    --secondary: var(--secondary-light);
-    --text: var(--text-light);
-    --background: var(--background-light);
-    --card: var(--card-light);
-    --accent: var(--accent-light);
-    --muted: var(--muted-light);
 }
 
 /* Dark Theme */
@@ -168,6 +168,7 @@ nav h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, #3b82f6, #4f46e5);  /* Hardcoded colors as backup */
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: #ffffff;
     padding-top: 60px;
@@ -217,17 +218,26 @@ nav h1 {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .social-icon {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     transition: transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-decoration: none;
 }
 
 .social-icon:hover {
     transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .cta-button {
@@ -310,28 +320,53 @@ nav h1 {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
 }
 
+/* Make skills responsive */
+@media (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skill-card {
+    background-color: #ffffff;  /* Hardcoded fallback */
     background-color: var(--card);
     padding: 1.5rem;
     border-radius: 0.5rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);  /* Light blue border on hover */
+    border-color: rgba(var(--primary), 0.3);
 }
 
 .skill-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--primary);
+    display: inline-block;
 }
 
 .skill-name {
@@ -495,16 +530,16 @@ nav h1 {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
     background-color: var(--card);
     color: var(--primary);
     border-radius: 9999px;
@@ -520,8 +555,8 @@ nav h1 {
 }
 
 .social-link i {
-    width: 1.5rem;
-    height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .contact-form {
