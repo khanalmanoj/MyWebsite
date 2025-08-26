@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manoj Khanal - Android Developer </title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Manoj Khanal - Android Developer | Flutter & Java Expert</title>
+    <meta name="description" content="Professional portfolio of Manoj Khanal, Android Developer specializing in Flutter, Dart, and Java. View my projects and get in touch for collaborations.">
+    <meta name="keywords" content="Android Developer, Flutter Developer, Mobile App Development, Java Developer, Manoj Khanal, App Developer">
+    <meta name="author" content="Manoj Khanal">
+    <meta property="og:title" content="Manoj Khanal - Android Developer | Flutter & Java Expert">
+    <meta property="og:description" content="Professional portfolio of Manoj Khanal, Android Developer specializing in Flutter, Dart, and Java.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.manojkhanal.com">
+    <meta property="og:image" content="portfolios.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manoj Khanal - Android Developer">
+    <meta name="twitter:description" content="Professional portfolio of Manoj Khanal, Android Developer specializing in Flutter, Dart, and Java."
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/source-code.png">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+    
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -16,18 +36,41 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i data-feather="moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i data-feather="menu"></i>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container text-center">
-            <img src="portfolios.JPG" alt="John Doe Avatar" class="avatar">
+        <div class="container text-center animate-fade-in">
+            <img src="portfolios.JPG" alt="Manoj Khanal Profile" class="avatar">
             <h1>Hi, I'm Manoj Khanal</h1>
-            <p>Passionate Android Developer crafting seamless mobile experiences</p>
+            <p>Android Developer crafting seamless mobile experiences</p>
+            <div class="social-bar">
+                <a href="https://www.facebook.com/khanalmanoj711/" class="social-icon" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://github.com/khanalmanoj" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:khanalmanoj26@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/manoj-khanal" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
             <a href="#contact" class="cta-button">Connect With Me</a>
         </div>
     </section>
@@ -35,10 +78,57 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I'm an Android developer with experience building high-quality mobile applications. Skilled in Flutter, Dart, Java, and modern Android frameworks, I specialize in creating intuitive and performant apps.</p>
-                <p>My passion lies in solving complex problems and delivering user-friendly solutions. When I'm not coding, you can find me exploring new tech trends or contributing to open-source projects.</p>
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">My journey as an Android developer</p>
+            </div>
+            <div class="about-content animate-fade-in">
+                <p>I'm an experienced Android developer with a passion for creating innovative and user-friendly mobile applications. With a strong foundation in Flutter, Dart, Java, and modern Android frameworks, I've successfully delivered numerous apps that solve real-world problems.</p>
+                <p>My approach to development combines technical excellence with a deep understanding of user needs. I believe in clean, maintainable code and robust architecture that can scale with evolving requirements.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-container animate-fade-in">
+                <div class="skill-card">
+                    <i class="fab fa-android skill-icon"></i>
+                    <h3 class="skill-name">Android</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java skill-icon"></i>
+                    <h3 class="skill-name">Java</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-mobile-alt skill-icon"></i>
+                    <h3 class="skill-name">Flutter</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3 class="skill-name">Dart</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3 class="skill-name">Firebase</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-layer-group skill-icon"></i>
+                    <h3 class="skill-name">REST APIs</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <h3 class="skill-name">Git</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-paint-brush skill-icon"></i>
+                    <h3 class="skill-name">UI/UX</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -46,25 +136,55 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Explore some of my recent work</p>
+            </div>
+            <div class="projects-grid animate-fade-in">
                 <div class="project-card">
-                    <img src="gitaapp.jpg" alt="Task Manager App Banner" class="project-banner">
-                    <h3>Bhagavad Gita App</h3>
-                    <p>Shreemad Bhagavad Gita App leverages experience of a sanskrit book that is part of the Hindu epic Mahabharata in text audio.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.my.bhagwat" class="link">View on PlayStore</a>
+                    <img src="gitaapp.jpg" alt="Bhagavad Gita App" class="project-banner">
+                    <div class="project-content">
+                        <h3 class="project-title">Bhagavad Gita App</h3>
+                        <p class="project-description">Shreemad Bhagavad Gita App delivers a comprehensive experience of the ancient Sanskrit text from the Hindu epic Mahabharata, featuring both text and audio formats.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Audio</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.my.bhagwat" class="link">
+                            <i class="fab fa-google-play"></i> View on PlayStore
+                        </a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <img src="npwall.jpg" alt="Fitness Tracker Banner" class="project-banner">
-                    <h3>NepWall Wallpaper App</h3>
-                    <p>An Android app created using flutter and firebase as backened leveraging experience of Wallpapers in Android phone.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.hello.npwall" class="link">View on Playstore</a>
+                    <img src="npwall.jpg" alt="NepWall Wallpaper App" class="project-banner">
+                    <div class="project-content">
+                        <h3 class="project-title">NepWall Wallpaper App</h3>
+                        <p class="project-description">An Android app built with Flutter and Firebase that provides a curated collection of high-quality wallpapers for Android devices with smooth user experience.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">UI/UX</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.hello.npwall" class="link">
+                            <i class="fab fa-google-play"></i> View on PlayStore
+                        </a>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <img src="qrunch.png" alt="E-Commerce App Banner" class="project-banner">
-                    <h3>QRUNCH App</h3>
-                    <p>This is a QR based Canteen Management App designed using Flutter and Django. Using this we can order food and snacks using a generated Quick Response(QR) code.</p>
-                    <a href="https://github.com/khanalmanoj/flutter_django" class="link">View on GitHub</a>
+                    <img src="qrunch.png" alt="QRUNCH App" class="project-banner">
+                    <div class="project-content">
+                        <h3 class="project-title">QRUNCH App</h3>
+                        <p class="project-description">A QR-based Canteen Management App developed with Flutter and Django that streamlines food ordering through generated QR codes, enhancing the cafeteria experience.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">QR Code</span>
+                        </div>
+                        <a href="https://github.com/khanalmanoj/flutter_django" class="link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,19 +193,48 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2>Connect With Me</h2>
-            <div class="contact-content">
-                <p class="contact-intro">Interested in collaborating or have a project in mind? Reach out through any of these platforms!</p>
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">Connect With Me</h2>
+                <p class="section-subtitle">Interested in collaborating or have a project in mind?</p>
+            </div>
+            <div class="contact-content animate-fade-in">
+                <p class="contact-intro">Let's discuss how I can help bring your app idea to life!</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/khanalmanoj711/" class="social-link" title="Facebook">
-                        <i data-feather="facebook"></i>
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="mailto:khanalmanoj26@gmail.com" class="social-link" title="Email">
-                        <i data-feather="mail"></i>
+                        <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://github.com/khanalmanoj" class="social-link" title="GitHub">
-                        <i data-feather="github"></i>
+                        <i class="fab fa-github"></i>
                     </a>
+                    <a href="https://www.linkedin.com/in/manoj-khanal" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -94,10 +243,93 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Manoj Khanal. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2025 Manoj Khanal. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Initialize Feather Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                if (document.body.classList.contains('dark-theme')) {
+                    themeIcon.setAttribute('data-feather', 'sun');
+                } else {
+                    themeIcon.setAttribute('data-feather', 'moon');
+                }
+                feather.replace();
+                
+                // Save theme preference
+                const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+            });
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.setAttribute('data-feather', 'sun');
+                feather.replace();
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Add animation to elements when they come into view
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-fade-in');
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial styles for animated elements
+            document.querySelectorAll('.animate-fade-in').forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Run animation check on scroll and on load
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+        });
+    </script>
+    <script src="form-validation.js"></script>
+    <script src="app.js"></script>
     <script>
         // Initialize Feather Icons
         feather.replace();
@@ -110,6 +342,14 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Make sure the contact form is properly initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactFormSubmission);
+            }
         });
     </script>
 </body>
