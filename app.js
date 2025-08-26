@@ -86,20 +86,33 @@ function resetContactForm() {
     document.getElementById('contact-form').addEventListener('submit', handleContactFormSubmission);
 }
 
+// Log for debugging on GitHub Pages
+console.log('App.js loaded successfully');
+
 // Initialize the website
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+    
+    // Log global functions available
+    console.log('validateForm function available:', typeof validateForm === 'function');
+    console.log('handleContactFormSubmission function available:', typeof handleContactFormSubmission === 'function');
     // Hide preloader after the page loads
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', () => {
+        const hidePreloader = () => {
             setTimeout(() => {
                 preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
             }, 500);
-        });
+        };
+        
+        // Try both ways to ensure preloader is hidden
+        window.addEventListener('load', hidePreloader);
+        
         // Fallback in case load event already fired
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-        }, 1000);
+        setTimeout(hidePreloader, 1500);
     }
     // Initialize contact form
     const contactForm = document.getElementById('contact-form');

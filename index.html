@@ -14,12 +14,12 @@
     <meta property="og:image" content="portfolios.JPG">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Manoj Khanal - Android Developer">
-    <meta name="twitter:description" content="Professional portfolio of Manoj Khanal, Android Developer specializing in Flutter, Dart, and Java."
+    <meta name="twitter:description" content="Professional portfolio of Manoj Khanal, Android Developer specializing in Flutter, Dart, and Java.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./animations.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/source-code.png">
 </head>
@@ -54,7 +54,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container text-center animate-fade-in">
-            <img src="portfolios.JPG" alt="Manoj Khanal Profile" class="avatar">
+            <img src="./portfolios.jpg" alt="Manoj Khanal Profile" class="avatar">
             <h1>Hi, I'm Manoj Khanal</h1>
             <p>Android Developer crafting seamless mobile experiences</p>
             <div class="social-bar">
@@ -142,7 +142,7 @@
             </div>
             <div class="projects-grid animate-fade-in">
                 <div class="project-card">
-                    <img src="gitaapp.jpg" alt="Bhagavad Gita App" class="project-banner">
+                    <img src="./gitaapp.jpg" alt="Bhagavad Gita App" class="project-banner">
                     <div class="project-content">
                         <h3 class="project-title">Bhagavad Gita App</h3>
                         <p class="project-description">Shreemad Bhagavad Gita App delivers a comprehensive experience of the ancient Sanskrit text from the Hindu epic Mahabharata, featuring both text and audio formats.</p>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="npwall.jpg" alt="NepWall Wallpaper App" class="project-banner">
+                    <img src="./npwall.jpg" alt="NepWall Wallpaper App" class="project-banner">
                     <div class="project-content">
                         <h3 class="project-title">NepWall Wallpaper App</h3>
                         <p class="project-description">An Android app built with Flutter and Firebase that provides a curated collection of high-quality wallpapers for Android devices with smooth user experience.</p>
@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="qrunch.png" alt="QRUNCH App" class="project-banner">
+                    <img src="./qrunch.png" alt="QRUNCH App" class="project-banner">
                     <div class="project-content">
                         <h3 class="project-title">QRUNCH App</h3>
                         <p class="project-description">A QR-based Canteen Management App developed with Flutter and Django that streamlines food ordering through generated QR codes, enhancing the cafeteria experience.</p>
@@ -259,7 +259,33 @@
     <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </a>
-
+    
+    <script>
+        // Back to top button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                // Show/hide back to top button based on scroll position
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+                
+                // Scroll to top when clicked
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+    
     <script>
         // Initialize Feather Icons
         document.addEventListener('DOMContentLoaded', () => {
@@ -328,27 +354,84 @@
             window.addEventListener('load', animateOnScroll);
         });
     </script>
-    <script src="form-validation.js"></script>
-    <script src="app.js"></script>
+    <script src="./form-validation.js"></script>
+    <script src="./app.js"></script>
     <script>
-        // Initialize Feather Icons
-        feather.replace();
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            } else {
+                console.error('Feather icons not loaded');
+            }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
-        });
-        
-        // Make sure the contact form is properly initialized
-        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Make sure the contact form is properly initialized
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
-                contactForm.addEventListener('submit', handleContactFormSubmission);
+                contactForm.addEventListener('submit', function(event) {
+                    if (typeof handleContactFormSubmission === 'function') {
+                        handleContactFormSubmission(event);
+                    } else {
+                        console.error('Form submission handler not loaded');
+                    }
+                });
+            }
+            
+            // Handle mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Initialize theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                // Check for saved theme preference
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    const icon = themeToggle.querySelector('i');
+                    if (icon) {
+                        icon.setAttribute('data-feather', 'sun');
+                        if (typeof feather !== 'undefined') {
+                            feather.replace();
+                        }
+                    }
+                }
+                
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-theme');
+                    const icon = themeToggle.querySelector('i');
+                    if (icon) {
+                        if (document.body.classList.contains('dark-theme')) {
+                            icon.setAttribute('data-feather', 'sun');
+                        } else {
+                            icon.setAttribute('data-feather', 'moon');
+                        }
+                        if (typeof feather !== 'undefined') {
+                            feather.replace();
+                        }
+                    }
+                    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+                });
             }
         });
     </script>
